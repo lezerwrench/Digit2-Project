@@ -1,5 +1,6 @@
 # Digit2-Project
 TinkerCad: https://www.tinkercad.com/things/lreR6KvCfE7-projekt/editel?returnTo=https%3A%2F%2Fwww.tinkercad.com%2Fdashboard&sharecode=cMU24VVHH2WTGlFJjVd5TvDfiT8bUhMbrMwmSxaqBqA
+
 A kód elérhető kommentezve a tinkercad oldalán keresztül.
 
 Klímaszabályozó és automata öntözőrendszer
