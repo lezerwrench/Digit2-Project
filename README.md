@@ -1,11 +1,15 @@
 # Digit2-Project
-TinkerCad: https://www.tinkercad.com/things/lreR6KvCfE7-projekt/editel?returnTo=https%3A%2F%2Fwww.tinkercad.com%2Fdashboard&sharecode=cMU24VVHH2WTGlFJjVd5TvDfiT8bUhMbrMwmSxaqBqA
+TinkerCad: https://www.tinkercad.com/things/1Mt057K60O9-digit2km-authlink/editel?returnTo=%2Fdashboard%2Fdesigns%2Fall&sharecode=CkfA4hAt3SVMpb4P6cHDYEZodrtOHUB5ArnRTl8_82o
 
-A kód elérhető kommentezve a tinkercad oldalán keresztül.
+Kép a projektről:
+<img width="2560" height="1208" alt="Digit2_KM Auth__Link" src="https://github.com/user-attachments/assets/9b3a2c35-67ee-4d13-9bda-7cb8cf6ff939" />
+
+
+A kód elérhető kommentekkel a tinkercad oldalán keresztül. A használati utasítás az utolsó bekezdésben található.
 
 Klímaszabályozó és automata öntözőrendszer
 
-Környezetszabályozó berendezés, képes egy zárt ökoszisztéma (pl.: üvegház vagy beltéri növénytermesztő egység) klimatikus tényezőinek önálló menedzselésére.
+Környezetszabályozó berendezés, képes egy zárt ökoszisztéma (pl.: üvegház vagy beltéri növénytermesztő egység klimatikus tényezőinek önálló menedzselésére.
 A rendszer két fő, egymástól funkcionálisan független, de egyazon vezérlőmagon osztozó alrendszerre tagozódik: a dinamikus hőmérséklet-kezelésre és az intelligens vízellátásra.
 
 A hardveres megvalósítás alapját egy Arduino Uno R3 mikrovezérlő képezi.
@@ -53,3 +57,23 @@ Az Arduino 5V-os áramköre nem bír el egy vízpumpát. Ezért a pumpa egy kül
 
 Hangerő- és Frekvenciacsillapítás a Piezo Ágban
 Egy 11k Ohm-os ellenállás a hangszóró előtt található. Ez lefojtja az Arduinóból kiáramló elektronokat, így kevesebb feszültség jut a csipogóra, amitől drasztikusan halkabb, elviselhetőbb lesz.
+
+A hőmérséklet manipulálása:
+Kattintson a TMP36 hőmérséklet-szenzor ikonjára.
+A megjelenő csúszkát húzza a kívánt értékre (pl. 35°C fölé).
+
+Elvárt rendszerreakció: A felső kijelzőn a hőmérséklet emelkedni kezd, a PID algoritmus beavatkozik: a PWM érték és az RPM ugrásszerűen megnő, és a ventilátor motorja felpörög. Ha a csúszkát visszahúzza 35°C alá, a motor fokozatosan lelassul, majd teljesen megáll.
+
+A talajnedvesség manipulálása:
+Kattintson a Talajnedvesség-érzékelő ikonjára.
+Húzza a vízszintes csúszkát balra, a száraz, repedezett föld jel irányába (hogy az érték 400 alá essen).
+
+Elvárt rendszerreakció: Amennyiben a tartályban van víz, a relé azonnal kattan, megjelenik az alsó kijelzőn az [O] jelzés, és a vízpumpa motorja működésbe lép. Ha a csúszkát jobbra húzza (ezzel szimulálva a sikeres öntözést), a pumpa azonnal lekapcsol.
+
+Az ultrahangos folyadékszint-szenzor kezelése:
+
+Kattintson a HC-SR04 ultrahangos távolságmérő ikonjára.
+A kijelző alatt megjelenik a szenzor zöld színű, tölcsér alakú látómezeje, benne egy kis zöld ponttal, amely a tartályban lévő vízfelszín távolságát jelképezi.
+
+A tartály feltöltése: Fogja meg az egérrel a zöld pontot, és húzza közelebb a szenzorhoz (60 cm alá). Ezzel azt szimulálja, hogy a tartály tele van vízzel. Ekkor a kijelzőn a VIZ: Rendben státusz lesz látható.
+A tartály kiürítése: Húzza a zöld pontot távolabb a szenzortól (60 cm fölé). Ezzel azt szimulálja, hogy a vízszint kritikusan lesüllyedt, és a tartály kiürült.
